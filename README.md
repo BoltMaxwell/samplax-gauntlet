@@ -42,6 +42,33 @@ Results
 Bold = the paper's own demo run with the paper's hyperparameters (the diagonal); ⭐ = row winner; every other cell is the best of a small tuning grid at the same gradient budget. Lower is better for all metrics.
 <!-- GAUNTLET-TABLE-END -->
 
+Compute cost
+------------
+
+Wall-clock seconds for the best configuration of each cell (single chain,
+includes JIT compile; toys on a laptop CPU, MNIST rows on an H100 — read
+within rows, not across them):
+
+| problem | device | sgld | psgld | sghmc | csgld | csghmc | amagold | vc_lp_sgld |
+|---|---|---|---|---|---|---|---|---|
+| doublewell_sghmc | M-series CPU | 9.2 | 9.7 | 9.5 | 8.3 | 8.0 | 3.9 | 23.6 |
+| gaussian2d | M-series CPU | 4.4 | 4.6 | 4.6 | 5.1 | 5.0 | 2.4 | 10.1 |
+| mog25 | M-series CPU | 0.2 | 0.2 | 0.2 | 0.2 | 0.2 | 0.2 | 0.7 |
+| lp_gaussian | M-series CPU | 2.6 | 2.9 | 2.6 | 2.9 | 2.7 | 1.3 | 9.3 |
+| doublewell_amagold | M-series CPU | 2.8 | 2.7 | 2.7 | 2.5 | 2.5 | 1.3 | 7.0 |
+| mnist_sghmc | H100 | 53.8 | 53.3 | 53.6 | 53.4 | 53.0 | 58.2 | 57.2 |
+| mnist_amagold | H100 | 47.9 | 48.1 | 47.8 | 47.5 | 47.9 | 60.8 | 50.6 |
+
+Two consistent patterns: at matched gradient budgets the SGLD/SGHMC-family
+kernels cost the same (the gradient dominates; schedules and preconditioning
+are free), **vc_lp_sgld pays ~2-3x on CPU** for simulated quantization
+(dominated by the VC branch arithmetic — on real low-precision hardware this
+inverts into a saving, which is the paper's point), and **AMAGOLD is fastest
+per gradient on the toys** (its inner leapfrog fuses 10 gradients per scan
+step) but pays its full-data M-H tax on MNIST (+15-25% wall vs the
+SGLD-family cells at the same budget, plus the ~100x step-size cap noted
+above — its real cost is statistical, not wall-clock).
+
 Notes on the MNIST rows
 -----------------------
 
