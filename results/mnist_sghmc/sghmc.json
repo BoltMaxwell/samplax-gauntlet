@@ -1,0 +1,20 @@
+{
+ "problem": "mnist_sghmc",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "sghmc",
+ "is_home": true,
+ "budget": 96000,
+ "seed": 0,
+ "configs": {
+  "paper": {
+   "hp": {
+    "step_mult": 1.0,
+    "alpha": 0.01
+   },
+   "metrics": {
+    "test_err": 0.016099998727440834,
+    "wall_s": 53.6
+   }
+  }
+ }
+}

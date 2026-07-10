@@ -36,9 +36,30 @@ Results
 | mog25 | cSG-MCMC (Zhang et al. 2020) | mode_tv | 0.8348 | 0.88 | 0.96 | **0.4952** ⭐ | 0.88 | 0.96 | 0.5241 |
 | lp_gaussian | low-precision SGLD (Zhang et al. 2022) | std_err | 0.04836 | 0.1571 | 0.02073 | 0.3667 | 0.07744 | 0.0002023 ⭐ | **0.002301** |
 | doublewell_amagold | AMAGOLD (Zhang et al. 2020) | density_l1 | 0.03902 | 0.0506 | 0.0204 ⭐ | 0.03776 | 0.03703 | **0.02996** | 0.3008 |
+| mnist_amagold | AMAGOLD (Zhang et al. 2020) | test_err | 0.0343 | 0.0387 | 0.0318 | 0.0338 | 0.0291 | **0.0233** ⭐ | 0.0382 |
+| mnist_sghmc | SGHMC (Chen et al. 2014) | test_err | 0.0235 | 0.4029 | **0.0161** ⭐ | 0.0497 | 0.0201 | 0.0357 | 0.0319 |
 
 Bold = the paper's own demo run with the paper's hyperparameters (the diagonal); ⭐ = row winner; every other cell is the best of a small tuning grid at the same gradient budget. Lower is better for all metrics.
 <!-- GAUNTLET-TABLE-END -->
+
+Notes on the MNIST rows
+-----------------------
+
+- Both diagonals hold: SGHMC at its paper settings wins its Gibbs-hyperprior
+  BNN (1.61% BMA test error), AMAGOLD at its paper settings wins its BNN
+  (2.33% current-sample error, acceptance 0.18).
+- AMAGOLD as a visitor needs two protocol courtesies its own paper grants it:
+  an SGD warmup on random-init rows (its M-H rejects everything from a cold
+  start) and a step-size grid in **its own regime** — its usable step is
+  capped by leapfrog error against the full-data energy at roughly 1/100 of
+  the SGLD-scale steps. Amortized M-H buys unbiasedness at the price of
+  step size; the matrix makes that cost visible (3.57% vs home 1.61%).
+- pSGLD's best grid point on the sigmoid BNN is far off (40% error): the
+  RMSprop-preconditioned regime needs its own step scale, which the current
+  grid misses — a known grid limitation, not a verdict on pSGLD.
+- The current-sample evaluation of the AMAGOLD row is inherently noisy
+  (+/- a few tenths of a percent); margins below that are not meaningful.
+  Seed replicates are the next hardening step for both MNIST rows.
 
 Problems
 --------

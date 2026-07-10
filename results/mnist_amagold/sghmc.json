@@ -1,0 +1,50 @@
+{
+ "problem": "mnist_amagold",
+ "origin": "AMAGOLD (Zhang et al. 2020)",
+ "sampler": "sghmc",
+ "is_home": false,
+ "budget": 22500,
+ "seed": 0,
+ "configs": {
+  "cfg0": {
+   "hp": {
+    "step_mult": 0.3,
+    "alpha": 0.01
+   },
+   "metrics": {
+    "test_err": 0.035999998450279236,
+    "wall_s": 48.7
+   }
+  },
+  "cfg1": {
+   "hp": {
+    "step_mult": 0.3,
+    "alpha": 0.1
+   },
+   "metrics": {
+    "test_err": 0.03460000082850456,
+    "wall_s": 47.8
+   }
+  },
+  "cfg2": {
+   "hp": {
+    "step_mult": 1.0,
+    "alpha": 0.01
+   },
+   "metrics": {
+    "test_err": 0.03999999910593033,
+    "wall_s": 48.0
+   }
+  },
+  "cfg3": {
+   "hp": {
+    "step_mult": 1.0,
+    "alpha": 0.1
+   },
+   "metrics": {
+    "test_err": 0.03179999813437462,
+    "wall_s": 47.8
+   }
+  }
+ }
+}

@@ -39,11 +39,16 @@ def render(results_dir="results"):
     header = ["problem", "origin", "metric"] + list(SAMPLERS)
     lines.append("| " + " | ".join(header) + " |")
     lines.append("|" + "---|" * len(header))
-    for pname, problem in PROBLEMS.items():
+    known = list(PROBLEMS)
+    extra = sorted(d for d in os.listdir(results_dir)
+                   if os.path.isdir(os.path.join(results_dir, d)) and d not in known)
+    origins = {}
+    for pname in known + extra:
         cells, vals = {}, {}
         for path in glob.glob(os.path.join(results_dir, pname, "*.json")):
             payload = json.load(open(path))
             cname, val = _best(payload)
+            origins[pname] = payload["origin"]
             if val is not None:
                 cells[payload["sampler"]] = (cname, val, payload["is_home"])
                 vals[payload["sampler"]] = val
@@ -67,7 +72,7 @@ def render(results_dir="results"):
         metric_name = next(iter(next(iter(
             any_payload["configs"].values()))["metrics"]))
         lines.append("| " + " | ".join(
-            [pname, problem.origin, metric_name] + row) + " |")
+            [pname, origins[pname], metric_name] + row) + " |")
     lines.append("")
     lines.append("Bold = the paper's own demo run with the paper's "
                  "hyperparameters (the diagonal); ⭐ = row winner; every other "

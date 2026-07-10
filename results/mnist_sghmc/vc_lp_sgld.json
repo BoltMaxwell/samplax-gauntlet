@@ -1,0 +1,54 @@
+{
+ "problem": "mnist_sghmc",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "vc_lp_sgld",
+ "is_home": false,
+ "budget": 96000,
+ "seed": 0,
+ "configs": {
+  "cfg0": {
+   "hp": {
+    "step_mult": 0.3,
+    "wl": 8,
+    "fl": 6
+   },
+   "metrics": {
+    "test_err": 0.04800000041723251,
+    "wall_s": 58.5
+   }
+  },
+  "cfg1": {
+   "hp": {
+    "step_mult": 0.3,
+    "wl": 8,
+    "fl": 8
+   },
+   "metrics": {
+    "test_err": 0.05649999901652336,
+    "wall_s": 57.0
+   }
+  },
+  "cfg2": {
+   "hp": {
+    "step_mult": 1.0,
+    "wl": 8,
+    "fl": 6
+   },
+   "metrics": {
+    "test_err": 0.03189999982714653,
+    "wall_s": 57.2
+   }
+  },
+  "cfg3": {
+   "hp": {
+    "step_mult": 1.0,
+    "wl": 8,
+    "fl": 8
+   },
+   "metrics": {
+    "test_err": 0.044999998062849045,
+    "wall_s": 56.7
+   }
+  }
+ }
+}
