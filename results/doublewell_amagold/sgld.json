@@ -1,0 +1,55 @@
+{
+ "problem": "doublewell_amagold",
+ "origin": "AMAGOLD (Zhang et al. 2020)",
+ "sampler": "sgld",
+ "is_home": false,
+ "budget": 1212000,
+ "seed": 0,
+ "configs": {
+  "step0.1": {
+   "hp": {
+    "step_size": 0.00625
+   },
+   "metrics": {
+    "density_l1": 0.03901774408691277
+   },
+   "wall_s": 2.83
+  },
+  "step0.3": {
+   "hp": {
+    "step_size": 0.01875
+   },
+   "metrics": {
+    "density_l1": 0.04518093825699983
+   },
+   "wall_s": 2.75
+  },
+  "step1.0": {
+   "hp": {
+    "step_size": 0.0625
+   },
+   "metrics": {
+    "density_l1": 0.10314642561355908
+   },
+   "wall_s": 2.83
+  },
+  "step3.0": {
+   "hp": {
+    "step_size": 0.1875
+   },
+   "metrics": {
+    "density_l1": 0.3951948051567986
+   },
+   "wall_s": 2.75
+  },
+  "step10.0": {
+   "hp": {
+    "step_size": 0.625
+   },
+   "metrics": {
+    "density_l1": null
+   },
+   "wall_s": 2.71
+  }
+ }
+}

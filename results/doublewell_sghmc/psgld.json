@@ -1,0 +1,55 @@
+{
+ "problem": "doublewell_sghmc",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "psgld",
+ "is_home": false,
+ "budget": 4000000,
+ "seed": 0,
+ "configs": {
+  "step0.1": {
+   "hp": {
+    "step_size": 0.001
+   },
+   "metrics": {
+    "density_l1": 0.21957823578068503
+   },
+   "wall_s": 9.97
+  },
+  "step0.3": {
+   "hp": {
+    "step_size": 0.003
+   },
+   "metrics": {
+    "density_l1": 0.16460601355846288
+   },
+   "wall_s": 9.27
+  },
+  "step1.0": {
+   "hp": {
+    "step_size": 0.01
+   },
+   "metrics": {
+    "density_l1": 0.09186339759720398
+   },
+   "wall_s": 10.03
+  },
+  "step3.0": {
+   "hp": {
+    "step_size": 0.03
+   },
+   "metrics": {
+    "density_l1": 0.0403726979029522
+   },
+   "wall_s": 9.7
+  },
+  "step10.0": {
+   "hp": {
+    "step_size": 0.1
+   },
+   "metrics": {
+    "density_l1": 0.08756425382832064
+   },
+   "wall_s": 9.27
+  }
+ }
+}

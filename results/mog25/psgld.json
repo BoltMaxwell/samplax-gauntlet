@@ -1,0 +1,60 @@
+{
+ "problem": "mog25",
+ "origin": "cSG-MCMC (Zhang et al. 2020)",
+ "sampler": "psgld",
+ "is_home": false,
+ "budget": 50000,
+ "seed": 0,
+ "configs": {
+  "step0.1": {
+   "hp": {
+    "step_size": 0.003
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.2
+  },
+  "step0.3": {
+   "hp": {
+    "step_size": 0.009
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.21
+  },
+  "step1.0": {
+   "hp": {
+    "step_size": 0.03
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.2
+  },
+  "step3.0": {
+   "hp": {
+    "step_size": 0.09
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.19
+  },
+  "step10.0": {
+   "hp": {
+    "step_size": 0.3
+   },
+   "metrics": {
+    "mode_tv": 0.8800000000000001,
+    "modes_visited": 3.0
+   },
+   "wall_s": 0.19
+  }
+ }
+}

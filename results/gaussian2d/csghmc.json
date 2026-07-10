@@ -1,0 +1,70 @@
+{
+ "problem": "gaussian2d",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "csghmc",
+ "is_home": false,
+ "budget": 2000000,
+ "seed": 0,
+ "configs": {
+  "step0.3_c20": {
+   "hp": {
+    "step_size": 0.015,
+    "num_cycles": 20
+   },
+   "metrics": {
+    "cov_err": 0.03225080966949462
+   },
+   "wall_s": 5.02
+  },
+  "step0.3_c60": {
+   "hp": {
+    "step_size": 0.015,
+    "num_cycles": 60
+   },
+   "metrics": {
+    "cov_err": 0.04358150362968444
+   },
+   "wall_s": 4.87
+  },
+  "step1.0_c20": {
+   "hp": {
+    "step_size": 0.05,
+    "num_cycles": 20
+   },
+   "metrics": {
+    "cov_err": 0.10177599191665648
+   },
+   "wall_s": 4.78
+  },
+  "step1.0_c60": {
+   "hp": {
+    "step_size": 0.05,
+    "num_cycles": 60
+   },
+   "metrics": {
+    "cov_err": 0.09400429129600524
+   },
+   "wall_s": 5.06
+  },
+  "step3.0_c20": {
+   "hp": {
+    "step_size": 0.15000000000000002,
+    "num_cycles": 20
+   },
+   "metrics": {
+    "cov_err": 0.2657745063304901
+   },
+   "wall_s": 4.77
+  },
+  "step3.0_c60": {
+   "hp": {
+    "step_size": 0.15000000000000002,
+    "num_cycles": 60
+   },
+   "metrics": {
+    "cov_err": 0.2713091552257538
+   },
+   "wall_s": 4.7
+  }
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "problem": "gaussian2d",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "psgld",
+ "is_home": false,
+ "budget": 2000000,
+ "seed": 0,
+ "configs": {
+  "step0.1": {
+   "hp": {
+    "step_size": 0.005000000000000001
+   },
+   "metrics": {
+    "cov_err": 0.24667685031890868
+   },
+   "wall_s": 4.36
+  },
+  "step0.3": {
+   "hp": {
+    "step_size": 0.015
+   },
+   "metrics": {
+    "cov_err": 0.13719128370285033
+   },
+   "wall_s": 4.31
+  },
+  "step1.0": {
+   "hp": {
+    "step_size": 0.05
+   },
+   "metrics": {
+    "cov_err": 0.07268743515014647
+   },
+   "wall_s": 4.81
+  },
+  "step3.0": {
+   "hp": {
+    "step_size": 0.15000000000000002
+   },
+   "metrics": {
+    "cov_err": 0.06389116048812865
+   },
+   "wall_s": 4.64
+  },
+  "step10.0": {
+   "hp": {
+    "step_size": 0.5
+   },
+   "metrics": {
+    "cov_err": 0.10509585142135619
+   },
+   "wall_s": 4.66
+  }
+ }
+}

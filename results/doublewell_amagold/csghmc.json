@@ -1,0 +1,70 @@
+{
+ "problem": "doublewell_amagold",
+ "origin": "AMAGOLD (Zhang et al. 2020)",
+ "sampler": "csghmc",
+ "is_home": false,
+ "budget": 1212000,
+ "seed": 0,
+ "configs": {
+  "step0.3_c20": {
+   "hp": {
+    "step_size": 0.01875,
+    "num_cycles": 20
+   },
+   "metrics": {
+    "density_l1": 0.05511834106978321
+   },
+   "wall_s": 2.54
+  },
+  "step0.3_c60": {
+   "hp": {
+    "step_size": 0.01875,
+    "num_cycles": 60
+   },
+   "metrics": {
+    "density_l1": 0.03703263822522957
+   },
+   "wall_s": 2.48
+  },
+  "step1.0_c20": {
+   "hp": {
+    "step_size": 0.0625,
+    "num_cycles": 20
+   },
+   "metrics": {
+    "density_l1": 0.09147032600391884
+   },
+   "wall_s": 2.46
+  },
+  "step1.0_c60": {
+   "hp": {
+    "step_size": 0.0625,
+    "num_cycles": 60
+   },
+   "metrics": {
+    "density_l1": 0.09849827576549615
+   },
+   "wall_s": 2.54
+  },
+  "step3.0_c20": {
+   "hp": {
+    "step_size": 0.1875,
+    "num_cycles": 20
+   },
+   "metrics": {
+    "density_l1": 0.27064829439780597
+   },
+   "wall_s": 2.8
+  },
+  "step3.0_c60": {
+   "hp": {
+    "step_size": 0.1875,
+    "num_cycles": 60
+   },
+   "metrics": {
+    "density_l1": 0.2711294936793296
+   },
+   "wall_s": 3.12
+  }
+ }
+}

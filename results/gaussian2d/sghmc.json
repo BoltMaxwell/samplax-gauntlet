@@ -1,0 +1,21 @@
+{
+ "problem": "gaussian2d",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "sghmc",
+ "is_home": true,
+ "budget": 2000000,
+ "seed": 0,
+ "configs": {
+  "paper": {
+   "hp": {
+    "step_size": 0.05,
+    "alpha": 0.05,
+    "v_hat": 1.0
+   },
+   "metrics": {
+    "cov_err": 0.00722111463546754
+   },
+   "wall_s": 4.63
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "problem": "mog25",
+ "origin": "cSG-MCMC (Zhang et al. 2020)",
+ "sampler": "csgld",
+ "is_home": true,
+ "budget": 50000,
+ "seed": 0,
+ "configs": {
+  "paper": {
+   "hp": {
+    "step_size": 0.09,
+    "num_cycles": 30,
+    "exploration_ratio": 0.25
+   },
+   "metrics": {
+    "mode_tv": 0.49516591050618275,
+    "modes_visited": 25.0
+   },
+   "wall_s": 0.2
+  }
+ }
+}

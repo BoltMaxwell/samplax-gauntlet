@@ -1,0 +1,21 @@
+{
+ "problem": "doublewell_sghmc",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "sghmc",
+ "is_home": true,
+ "budget": 4000000,
+ "seed": 0,
+ "configs": {
+  "paper": {
+   "hp": {
+    "step_size": 0.01,
+    "alpha": 0.3,
+    "v_hat": 4.0
+   },
+   "metrics": {
+    "density_l1": 0.0193000226073377
+   },
+   "wall_s": 9.53
+  }
+ }
+}

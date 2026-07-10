@@ -1,0 +1,21 @@
+{
+ "problem": "doublewell_amagold",
+ "origin": "AMAGOLD (Zhang et al. 2020)",
+ "sampler": "amagold",
+ "is_home": true,
+ "budget": 1212000,
+ "seed": 0,
+ "configs": {
+  "paper": {
+   "hp": {
+    "dt": 0.25,
+    "C": 0.5,
+    "nstep": 10
+   },
+   "metrics": {
+    "density_l1": 0.02996057885247673
+   },
+   "wall_s": 1.32
+  }
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "problem": "doublewell_sghmc",
+ "origin": "SGHMC (Chen et al. 2014)",
+ "sampler": "vc_lp_sgld",
+ "is_home": false,
+ "budget": 4000000,
+ "seed": 0,
+ "configs": {
+  "lr0.3_fl3": {
+   "hp": {
+    "lr": 0.003,
+    "wl": 8,
+    "fl": 3
+   },
+   "metrics": {
+    "density_l1": 0.4026213113972181
+   },
+   "wall_s": 23.56
+  },
+  "lr0.3_fl4": {
+   "hp": {
+    "lr": 0.003,
+    "wl": 8,
+    "fl": 4
+   },
+   "metrics": {
+    "density_l1": 0.301181441174567
+   },
+   "wall_s": 23.65
+  },
+  "lr1.0_fl3": {
+   "hp": {
+    "lr": 0.01,
+    "wl": 8,
+    "fl": 3
+   },
+   "metrics": {
+    "density_l1": 0.40168454352065147
+   },
+   "wall_s": 23.37
+  },
+  "lr1.0_fl4": {
+   "hp": {
+    "lr": 0.01,
+    "wl": 8,
+    "fl": 4
+   },
+   "metrics": {
+    "density_l1": 0.3025981078413422
+   },
+   "wall_s": 23.37
+  },
+  "lr3.0_fl3": {
+   "hp": {
+    "lr": 0.03,
+    "wl": 8,
+    "fl": 3
+   },
+   "metrics": {
+    "density_l1": 0.40529653538949983
+   },
+   "wall_s": 37.17
+  },
+  "lr3.0_fl4": {
+   "hp": {
+    "lr": 0.03,
+    "wl": 8,
+    "fl": 4
+   },
+   "metrics": {
+    "density_l1": 0.30423699673001364
+   },
+   "wall_s": 23.8
+  }
+ }
+}

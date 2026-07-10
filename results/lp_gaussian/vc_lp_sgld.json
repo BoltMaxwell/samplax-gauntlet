@@ -1,0 +1,22 @@
+{
+ "problem": "lp_gaussian",
+ "origin": "low-precision SGLD (Zhang et al. 2022)",
+ "sampler": "vc_lp_sgld",
+ "is_home": true,
+ "budget": 1000000,
+ "seed": 0,
+ "configs": {
+  "paper": {
+   "hp": {
+    "lr": 0.002,
+    "wl": 8,
+    "fl": 3
+   },
+   "metrics": {
+    "std_err": 0.002301454544067383,
+    "std": 0.9976985454559326
+   },
+   "wall_s": 9.27
+  }
+ }
+}

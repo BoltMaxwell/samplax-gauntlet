@@ -1,0 +1,82 @@
+{
+ "problem": "lp_gaussian",
+ "origin": "low-precision SGLD (Zhang et al. 2022)",
+ "sampler": "sghmc",
+ "is_home": false,
+ "budget": 1000000,
+ "seed": 0,
+ "configs": {
+  "step0.3_a0.1": {
+   "hp": {
+    "step_size": 0.0006,
+    "alpha": 0.1,
+    "v_hat": 0.0
+   },
+   "metrics": {
+    "std_err": 0.10431849956512451,
+    "std": 1.1043184995651245
+   },
+   "wall_s": 3.05
+  },
+  "step0.3_a0.3": {
+   "hp": {
+    "step_size": 0.0006,
+    "alpha": 0.3,
+    "v_hat": 0.0
+   },
+   "metrics": {
+    "std_err": 0.2295933961868286,
+    "std": 1.2295933961868286
+   },
+   "wall_s": 2.8
+  },
+  "step1.0_a0.1": {
+   "hp": {
+    "step_size": 0.002,
+    "alpha": 0.1,
+    "v_hat": 0.0
+   },
+   "metrics": {
+    "std_err": 0.04708981513977051,
+    "std": 1.0470898151397705
+   },
+   "wall_s": 3.01
+  },
+  "step1.0_a0.3": {
+   "hp": {
+    "step_size": 0.002,
+    "alpha": 0.3,
+    "v_hat": 0.0
+   },
+   "metrics": {
+    "std_err": 0.11629760265350342,
+    "std": 1.1162976026535034
+   },
+   "wall_s": 2.4
+  },
+  "step3.0_a0.1": {
+   "hp": {
+    "step_size": 0.006,
+    "alpha": 0.1,
+    "v_hat": 0.0
+   },
+   "metrics": {
+    "std_err": 0.020728111267089844,
+    "std": 1.0207281112670898
+   },
+   "wall_s": 2.6
+  },
+  "step3.0_a0.3": {
+   "hp": {
+    "step_size": 0.006,
+    "alpha": 0.3,
+    "v_hat": 0.0
+   },
+   "metrics": {
+    "std_err": 0.04656052589416504,
+    "std": 1.046560525894165
+   },
+   "wall_s": 2.93
+  }
+ }
+}

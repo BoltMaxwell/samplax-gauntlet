@@ -1,0 +1,60 @@
+{
+ "problem": "lp_gaussian",
+ "origin": "low-precision SGLD (Zhang et al. 2022)",
+ "sampler": "psgld",
+ "is_home": false,
+ "budget": 1000000,
+ "seed": 0,
+ "configs": {
+  "step0.1": {
+   "hp": {
+    "step_size": 0.0002
+   },
+   "metrics": {
+    "std_err": 2.7116611003875732,
+    "std": 3.7116611003875732
+   },
+   "wall_s": 2.97
+  },
+  "step0.3": {
+   "hp": {
+    "step_size": 0.0006
+   },
+   "metrics": {
+    "std_err": 1.7825021743774414,
+    "std": 2.7825021743774414
+   },
+   "wall_s": 2.8
+  },
+  "step1.0": {
+   "hp": {
+    "step_size": 0.002
+   },
+   "metrics": {
+    "std_err": 0.8203067779541016,
+    "std": 1.8203067779541016
+   },
+   "wall_s": 2.87
+  },
+  "step3.0": {
+   "hp": {
+    "step_size": 0.006
+   },
+   "metrics": {
+    "std_err": 0.3793383836746216,
+    "std": 1.3793383836746216
+   },
+   "wall_s": 2.78
+  },
+  "step10.0": {
+   "hp": {
+    "step_size": 0.02
+   },
+   "metrics": {
+    "std_err": 0.15707743167877197,
+    "std": 1.157077431678772
+   },
+   "wall_s": 2.89
+  }
+ }
+}

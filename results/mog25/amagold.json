@@ -1,0 +1,82 @@
+{
+ "problem": "mog25",
+ "origin": "cSG-MCMC (Zhang et al. 2020)",
+ "sampler": "amagold",
+ "is_home": false,
+ "budget": 50000,
+ "seed": 0,
+ "configs": {
+  "dt0.3_C0.5": {
+   "hp": {
+    "dt": 0.051000000000000004,
+    "C": 0.5,
+    "nstep": 10
+   },
+   "metrics": {
+    "mode_tv": 0.9600000000000001,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.3
+  },
+  "dt0.3_C3.0": {
+   "hp": {
+    "dt": 0.051000000000000004,
+    "C": 3.0,
+    "nstep": 10
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.25
+  },
+  "dt1.0_C0.5": {
+   "hp": {
+    "dt": 0.17,
+    "C": 0.5,
+    "nstep": 10
+   },
+   "metrics": {
+    "mode_tv": 1.0,
+    "modes_visited": 0.0
+   },
+   "wall_s": 0.25
+  },
+  "dt1.0_C3.0": {
+   "hp": {
+    "dt": 0.17,
+    "C": 3.0,
+    "nstep": 10
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.25
+  },
+  "dt3.0_C0.5": {
+   "hp": {
+    "dt": 0.51,
+    "C": 0.5,
+    "nstep": 10
+   },
+   "metrics": {
+    "mode_tv": 1.0,
+    "modes_visited": 0.0
+   },
+   "wall_s": 0.25
+  },
+  "dt3.0_C3.0": {
+   "hp": {
+    "dt": 0.51,
+    "C": 3.0,
+    "nstep": 10
+   },
+   "metrics": {
+    "mode_tv": 1.0,
+    "modes_visited": 0.0
+   },
+   "wall_s": 0.25
+  }
+ }
+}

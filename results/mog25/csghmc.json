@@ -1,0 +1,76 @@
+{
+ "problem": "mog25",
+ "origin": "cSG-MCMC (Zhang et al. 2020)",
+ "sampler": "csghmc",
+ "is_home": false,
+ "budget": 50000,
+ "seed": 0,
+ "configs": {
+  "step0.3_c10": {
+   "hp": {
+    "step_size": 0.009,
+    "num_cycles": 10
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.19
+  },
+  "step0.3_c30": {
+   "hp": {
+    "step_size": 0.009,
+    "num_cycles": 30
+   },
+   "metrics": {
+    "mode_tv": 0.9600000000000001,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.19
+  },
+  "step1.0_c10": {
+   "hp": {
+    "step_size": 0.03,
+    "num_cycles": 10
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.2
+  },
+  "step1.0_c30": {
+   "hp": {
+    "step_size": 0.03,
+    "num_cycles": 30
+   },
+   "metrics": {
+    "mode_tv": 0.96,
+    "modes_visited": 1.0
+   },
+   "wall_s": 0.2
+  },
+  "step3.0_c10": {
+   "hp": {
+    "step_size": 0.09,
+    "num_cycles": 10
+   },
+   "metrics": {
+    "mode_tv": 0.909748148148148,
+    "modes_visited": 8.0
+   },
+   "wall_s": 0.2
+  },
+  "step3.0_c30": {
+   "hp": {
+    "step_size": 0.09,
+    "num_cycles": 30
+   },
+   "metrics": {
+    "mode_tv": 0.8800000000000001,
+    "modes_visited": 3.0
+   },
+   "wall_s": 0.2
+  }
+ }
+}
