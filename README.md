@@ -69,6 +69,24 @@ step) but pays its full-data M-H tax on MNIST (+15-25% wall vs the
 SGLD-family cells at the same budget, plus the ~100x step-size cap noted
 above — its real cost is statistical, not wall-clock).
 
+mcmc-doctor integration
+-----------------------
+
+This repo is the test bed for the global mcmc-doctor skill
+(`~/.claude/skills/mcmc-doctor`): `gauntlet.run --save-chains` and
+`gauntlet.ladder` / `gauntlet.bnn_ladder` emit its chain format, and every
+cell's metrics include the skill's ESS/R-hat/tau when it is installed.
+Round-trip validations recorded here:
+
+- `gauntlet.ladder` (gaussian2d, sghmc): tune recommends step = 0.05 —
+  exactly the source paper's setting (bias_z 1.3 -> 69 across the knee).
+- `gauntlet.bnn_ladder` (MNIST BNN on H100, `ladders/bnn*`): a 200-epoch
+  ladder was correctly refused (functional tau ~100 epochs: chains too
+  short); the 800-epoch rerun localizes the bias frontier exactly at the
+  paper's step (bias_z 2.3 at 1x eta, 18 at 3x, 96 at 10x) while flagging
+  that plain-SGHMC BNN chains never satisfy between-chain R-hat across
+  inits — the same single-basin behavior the mog25 case documents.
+
 Notes on the MNIST rows
 -----------------------
 
