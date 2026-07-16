@@ -13,9 +13,12 @@
     "nstep": 10
    },
    "metrics": {
-    "cov_err": 0.19181524515151976
+    "cov_err": 0.19181524515151976,
+    "ess_bulk_min": 6547.9,
+    "rhat_split_max": 1.0002,
+    "tau_max": 22.9
    },
-   "wall_s": 2.38
+   "wall_s": 2.79
   },
   "dt0.3_C3.0": {
    "hp": {
@@ -24,9 +27,12 @@
     "nstep": 10
    },
    "metrics": {
-    "cov_err": 0.6404509723186493
+    "cov_err": 0.6404509723186493,
+    "ess_bulk_min": 4288.8,
+    "rhat_split_max": 1.0002,
+    "tau_max": 35.0
    },
-   "wall_s": 2.04
+   "wall_s": 2.62
   },
   "dt1.0_C0.5": {
    "hp": {
@@ -35,9 +41,12 @@
     "nstep": 10
    },
    "metrics": {
-    "cov_err": 0.5158277034759522
+    "cov_err": 0.5158277034759522,
+    "ess_bulk_min": 44336.9,
+    "rhat_split_max": 1.0,
+    "tau_max": 3.4
    },
-   "wall_s": 2.05
+   "wall_s": 2.43
   },
   "dt1.0_C3.0": {
    "hp": {
@@ -46,9 +55,12 @@
     "nstep": 10
    },
    "metrics": {
-    "cov_err": 0.8480036437511445
+    "cov_err": 0.8480036437511445,
+    "ess_bulk_min": 16267.6,
+    "rhat_split_max": 1.0,
+    "tau_max": 9.2
    },
-   "wall_s": 1.98
+   "wall_s": 2.72
   },
   "dt3.0_C0.5": {
    "hp": {
@@ -57,9 +69,12 @@
     "nstep": 10
    },
    "metrics": {
-    "cov_err": 0.4346258521080017
+    "cov_err": 0.4346258521080017,
+    "ess_bulk_min": 367.8,
+    "rhat_split_max": 1.0006,
+    "tau_max": 407.8
    },
-   "wall_s": 2.03
+   "wall_s": 3.21
   },
   "dt3.0_C3.0": {
    "hp": {
@@ -68,9 +83,12 @@
     "nstep": 10
    },
    "metrics": {
-    "cov_err": 0.9006529331207276
+    "cov_err": 0.9006529331207276,
+    "ess_bulk_min": 3407.5,
+    "rhat_split_max": 1.0004,
+    "tau_max": 44.0
    },
-   "wall_s": 2.02
+   "wall_s": 2.18
   }
  }
 }

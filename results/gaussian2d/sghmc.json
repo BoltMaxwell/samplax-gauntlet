@@ -13,9 +13,12 @@
     "v_hat": 1.0
    },
    "metrics": {
-    "cov_err": 0.00722111463546754
+    "cov_err": 0.00722111463546754,
+    "ess_bulk_min": 160619.8,
+    "rhat_split_max": 1.0,
+    "tau_max": 2.2
    },
-   "wall_s": 4.63
+   "wall_s": 5.27
   }
  }
 }

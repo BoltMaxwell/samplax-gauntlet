@@ -14,9 +14,12 @@
    },
    "metrics": {
     "mode_tv": 0.49516591050618275,
-    "modes_visited": 25.0
+    "modes_visited": 25.0,
+    "ess_bulk_min": 50.5,
+    "rhat_split_max": 1.0055,
+    "tau_max": 668.1
    },
-   "wall_s": 0.2
+   "wall_s": 0.27
   }
  }
 }

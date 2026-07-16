@@ -11,45 +11,60 @@
     "step_size": 0.005000000000000001
    },
    "metrics": {
-    "cov_err": 0.24667685031890868
+    "cov_err": 0.24667685031890868,
+    "ess_bulk_min": 476.4,
+    "rhat_split_max": 1.0015,
+    "tau_max": 755.6
    },
-   "wall_s": 4.36
+   "wall_s": 5.31
   },
   "step0.3": {
    "hp": {
     "step_size": 0.015
    },
    "metrics": {
-    "cov_err": 0.13719128370285033
+    "cov_err": 0.13719128370285033,
+    "ess_bulk_min": 2729.8,
+    "rhat_split_max": 1.0004,
+    "tau_max": 131.9
    },
-   "wall_s": 4.31
+   "wall_s": 5.3
   },
   "step1.0": {
    "hp": {
     "step_size": 0.05
    },
    "metrics": {
-    "cov_err": 0.07268743515014647
+    "cov_err": 0.07268743515014647,
+    "ess_bulk_min": 8926.6,
+    "rhat_split_max": 1.0001,
+    "tau_max": 40.3
    },
-   "wall_s": 4.81
+   "wall_s": 5.29
   },
   "step3.0": {
    "hp": {
     "step_size": 0.15000000000000002
    },
    "metrics": {
-    "cov_err": 0.06389116048812865
+    "cov_err": 0.06389116048812865,
+    "ess_bulk_min": 25972.1,
+    "rhat_split_max": 1.0,
+    "tau_max": 13.9
    },
-   "wall_s": 4.64
+   "wall_s": 5.34
   },
   "step10.0": {
    "hp": {
     "step_size": 0.5
    },
    "metrics": {
-    "cov_err": 0.10509585142135619
+    "cov_err": 0.10509585142135619,
+    "ess_bulk_min": 65797.1,
+    "rhat_split_max": 1.0,
+    "tau_max": 5.5
    },
-   "wall_s": 4.66
+   "wall_s": 5.3
   }
  }
 }
