@@ -278,7 +278,12 @@ def run_cell(row_name, sampler, hp, seed, data_dir):
 
 GRIDS = {
     "sgld": lambda row: [{"step_mult": m} for m in (0.3, 1.0, 3.0)],
-    "psgld": lambda row: [{"step_mult": m} for m in (0.03, 0.1, 0.3)],
+    # pSGLD grid set by an mcmc-doctor ladder (ladders/psgld800*): the
+    # rmsprop-normalized drift makes nominal step multipliers ~1000x larger
+    # than SGLD's here; NO rung was simultaneously mixed and bias-clean, so
+    # read this cell as preconditioned-optimization-with-noise, not a
+    # converged sampler (see README note)
+    "psgld": lambda row: [{"step_mult": m} for m in (300.0, 1000.0, 3000.0, 10000.0)],
     "sghmc": lambda row: [{"step_mult": m, "alpha": a}
                           for m in (0.3, 1.0) for a in (0.01, 0.1)],
     "csgld": lambda row: [{"step_mult": m, "num_cycles": c}

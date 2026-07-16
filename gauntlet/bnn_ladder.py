@@ -27,8 +27,18 @@ from .mnist import evaluate_fn, make_grad_fns, make_model, ROWS
 from .mnist_data import load_mnist
 
 
+def make_kernel(sampler, alpha):
+    if sampler == "sghmc":
+        return samplax.sghmc(alpha=alpha)
+    if sampler == "psgld":
+        return samplax.sgld(preconditioner=samplax.rmsprop())
+    if sampler == "sgld":
+        return samplax.sgld()
+    raise ValueError(f"bnn_ladder supports sgld/psgld/sghmc, got {sampler!r}")
+
+
 def run_rung(step_mult, epochs, n_chains, data_dir, seed, alpha=0.01,
-             n_probe=2000):
+             n_probe=2000, sampler="sghmc"):
     row = ROWS["mnist_sghmc"]
     (x_train, y_train), (x_test, y_test) = load_mnist(data_dir)
     x_train, x_test = x_train / 256.0, x_test / 256.0
@@ -47,7 +57,7 @@ def run_rung(step_mult, epochs, n_chains, data_dir, seed, alpha=0.01,
         params, forward = make_model(row, k_model)
         ascent_grad, grad_nll, _, mean_nll = make_grad_fns(
             row, forward, jnp.asarray(x_train), jnp.asarray(y_train), num_train)
-        kernel = samplax.sghmc(alpha=alpha)
+        kernel = make_kernel(sampler, alpha)
         state = kernel.init(key, params)
         wd = jax.tree_util.tree_map(lambda _: jnp.asarray(wd0), params)
         rng = np.random.default_rng(chain_seed)
@@ -89,6 +99,8 @@ def run_rung(step_mult, epochs, n_chains, data_dir, seed, alpha=0.01,
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--data_dir", default="data/mnist")
+    ap.add_argument("--sampler", default="sghmc",
+                    choices=("sgld", "psgld", "sghmc"))
     ap.add_argument("--step_mults", default="0.1,0.3,1.0,3.0,10.0")
     ap.add_argument("--epochs", type=int, default=200)
     ap.add_argument("--chains", type=int, default=3)
@@ -100,11 +112,12 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     for m in (float(s) for s in args.step_mults.split(",")):
         chains, step, nb = run_rung(m, args.epochs, args.chains,
-                                    args.data_dir, args.seed, args.alpha)
+                                    args.data_dir, args.seed, args.alpha,
+                                    sampler=args.sampler)
         path = os.path.join(args.out, f"rung_{m:g}.npz")
         np.savez_compressed(
             path, chains=chains.astype(np.float32), step_size=step,
-            sampler="sghmc", grad_evals=args.chains * args.epochs * nb,
+            sampler=args.sampler, grad_evals=args.chains * args.epochs * nb,
             step_mult=m)
         print(f"wrote {path} {chains.shape} (step={step:g})", flush=True)
 

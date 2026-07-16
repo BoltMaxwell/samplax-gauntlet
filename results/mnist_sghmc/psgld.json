@@ -8,29 +8,38 @@
  "configs": {
   "cfg0": {
    "hp": {
-    "step_mult": 0.03
+    "step_mult": 300.0
    },
    "metrics": {
-    "test_err": 0.8865000009536743,
-    "wall_s": 55.0
+    "test_err": 0.026499999687075615,
+    "wall_s": 60.5
    }
   },
   "cfg1": {
    "hp": {
-    "step_mult": 0.1
+    "step_mult": 1000.0
    },
    "metrics": {
-    "test_err": 0.8554999828338623,
-    "wall_s": 53.4
+    "test_err": 0.024899998679757118,
+    "wall_s": 55.0
    }
   },
   "cfg2": {
    "hp": {
-    "step_mult": 0.3
+    "step_mult": 3000.0
    },
    "metrics": {
-    "test_err": 0.40289998054504395,
-    "wall_s": 53.3
+    "test_err": 0.022099999710917473,
+    "wall_s": 53.7
+   }
+  },
+  "cfg3": {
+   "hp": {
+    "step_mult": 10000.0
+   },
+   "metrics": {
+    "test_err": 0.020999999716877937,
+    "wall_s": 54.5
    }
   }
  }
